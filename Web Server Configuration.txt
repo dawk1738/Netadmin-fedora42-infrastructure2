@@ -1,0 +1,6 @@
+sudo dnf install httpd -y				Installs the Apache HTTP Server package
+sudo systemctl enable httpd				Enables the Apache service to start on boot.
+sudo systemctl start httpd				Starts the Apache service.
+sudo apachectl configtest			Tests the Apache configuration for any syntax errors.
+sudo sudo systemctl restart httpd		Restarts the Apache service to apply new configurations.
+

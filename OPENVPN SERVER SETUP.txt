@@ -1,0 +1,13 @@
+sudo dnf install openvpn		Install OpenVPN on Fedora.
+sudo mkdir /etc/openvpn/server		Create directory for OpenVPN configuration files.
+sudo cp /usr/share/doc/openvpn/sample/sample-config-files/server.conf /etc/openvpn/server/	Copy sample server config file.
+sudo cd /etc/openvpn/server		Navigate to the OpenVPN server directory.
+sudo openssl dhparam -out dh.pem 2048	Generate Diffie-Hellman parameters for key exchange.
+sudo openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout ca.key -out ca.crt	Generate CA certificate and key.
+sudo nano /etc/sysctl.conf		Edit system configuration to enable IP forwarding.
+sudo systemctl start openvpn@server	Start the OpenVPN service.
+sudo systemctl enable openvpn@server	Enable OpenVPN to start automatically on boot.
+sudo firewall-cmd --permanent --add-port=1194/udp	Open UDP port 1194 (default OpenVPN port).
+sudo /usr/share/openvpn/easy-rsa/3/easyrsa gen-req clientname	Generate client certificate request.
+sudo /usr/share/openvpn/easy-rsa/3/easyrsa sign-req client clientname	Sign and issue client certificate.
+openvpn --config client-config-file.ovpn	Start OpenVPN client using specified configuration file

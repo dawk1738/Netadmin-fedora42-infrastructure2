@@ -1,0 +1,22 @@
+sudo systemctl status firewalld		Check if Firewalld service is installed, active, and running.
+sudo systemctl start firewalld		Start the Firewalld service if it’s not running.
+sudo firewall-cmd --get-zones		List all available firewall zones (e.g., public, work, home).
+sudo firewall-cmd --set-default-zone=your-zone		Change the default firewall zone.
+sudo firewall-cmd --zone=public --add-service=http --permanent		Allow HTTP (port 80) through the firewall permanently.
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent		Open TCP port 8080 permanently.
+sudo firewall-cmd --reload				Reload firewall rules to apply changes.
+sudo firewall-cmd --zone=public --list-all		View all active rules for a zone.
+sudo firewall-cmd --zone=public --remove-service=http --permanent	Remove the HTTP service rule.
+sudo firewall-cmd --zone=public --remove-port=8080/tcp --permanent	Remove the TCP port 8080 rule.
+sudo firewall-cmd --zone=public --add-masquerade --permanent		Enable NAT masquerading for outgoing traffic.
+sudo firewall-cmd --zone=your-zone --add-forward-port=port=514:proto=udp:toport=514:toaddr=your-logging-server --permanent					Enable firewall logging by forwarding logs to a remote server.
+
+
+
+
+
+
+
+
+
+

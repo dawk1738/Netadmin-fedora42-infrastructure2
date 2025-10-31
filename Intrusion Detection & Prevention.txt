@@ -1,0 +1,7 @@
+sudo dnf install suricata			Install the Suricata IDS/IPS tool.
+sudo nano /etc/suricata/suricata.yaml		Edit the Suricata configuration file.
+sudo suricata-update			Download and update Suricata rulesets (e.g., Emerging Threats).
+sudo systemctl start suricata			Start the Suricata service.
+sudo systemctl enable suricata			Enable Suricata to start on boot.
+sudo cat /var/log/suricata/fast.log		View Suricata alerts and logs.
+
