@@ -1,0 +1,4 @@
+Command,Description
+nmcli connection show or ip addr show,[cite_start]Commands to view current network interfaces. [cite: 99]
+sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0,[cite_start]Use text editor to set parameters like IP. [cite: 100]
+sudo systemctl restart NetworkManager,[cite_start]Restarts the service to apply changes. [cite: 100]
