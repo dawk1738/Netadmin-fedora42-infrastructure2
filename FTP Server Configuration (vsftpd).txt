@@ -1,8 +1,0 @@
-sudo dnf install vsftpd				Installs the FTP server package.
-sudo systemctl start vsftpd			Starts FTP service.
-sudo systemctl enable vsftpd			Enables FTP service to start at boot.
-sudo nano /etc/vsftpd/vsftpd.conf		Opens vsftpd configuration file for editing.
-sudo firewall-cmd --permanent --zone=public --add-service=ftp	Allows FTP traffic through firewall.
-sudo firewall-cmd --reload			Reloads firewall rules
-sudo systemctl restart vsftpd			Restarts FTP server to apply new settings.
-
