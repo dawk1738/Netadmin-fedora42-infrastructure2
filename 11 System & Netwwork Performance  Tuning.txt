@@ -1,0 +1,15 @@
+| **Command**                                      | **What it does**                                        |
+| ------------------------------------------------ | ------------------------------------------------------- |
+| `sudo dnf update`                                | Updates the Fedora Server to the latest packages.       |
+| `top` / `htop` / `glances`                       | Shows real-time performance stats.                      |
+| `sudo nano /etc/sysctl.conf`                     | Opens system kernel settings file.                      |
+| `vm.swappiness = 10`                             | Lowers swap usage for better RAM performance.           |
+| `sudo sysctl -p`                                 | Applies sysctl changes without reboot.                  |
+| `systemctl enable fstrim.timer`                  | Enables weekly SSD TRIM optimization.                   |
+| `systemctl start fstrim.timer`                   | Runs SSD TRIM service immediately.                      |
+| Add in `/etc/fstab`: `noatime,nodiratime`        | Reduces disk writes for faster file system performance. |
+| `sudo nano /etc/security/limits.conf`            | Adjusts limits for open files and connections.          |
+| `* soft nofile 65535` / `* hard nofile 65535`    | Raises max open file count for better performance.      |
+| `sudo nano /etc/security/limits.d/20-nproc.conf` | Adjusts number of allowed processes.                    |
+| `sudo systemctl disable service-name`            | Turns off services you don’t need.                      |
+

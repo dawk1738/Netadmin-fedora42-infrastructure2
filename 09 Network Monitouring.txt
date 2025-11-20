@@ -1,0 +1,8 @@
+| **Command**                                   | **What it does**                                 |
+| --------------------------------------------- | ------------------------------------------------ |
+| `sudo dnf install nagios`                     | Installs the Nagios monitoring server.           |
+| `sudo dnf install nagios-plugins-all`         | Installs all Nagios monitoring plugins.          |
+| `sudo systemctl start nagios`                 | Starts the Nagios service.                       |
+| `sudo systemctl enable nagios`                | Enables Nagios to start automatically on boot.   |
+| Access via browser: `http://localhost/nagios` | Opens Nagios dashboard using server IP/hostname. |
+

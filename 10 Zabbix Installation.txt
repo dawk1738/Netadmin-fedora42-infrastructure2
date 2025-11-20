@@ -1,0 +1,14 @@
+| **Command**                                                                        | **What it does**                                          |                                             |
+| ---------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------- |
+| `sudo dnf install https://repo.zabbix.com/.../zabbix-release-5.4-1.el8.noarch.rpm` | Adds the Zabbix repository to Fedora.                     |                                             |
+| `sudo dnf install zabbix-server-mysql zabbix-web-mysql zabbix-appliance`           | Installs the Zabbix server, web UI, and agent components. |                                             |
+| `mysql -u root -p`                                                                 | Logs into MariaDB to prepare the Zabbix database.         |                                             |
+| `CREATE DATABASE zabbix CHARACTER SET utf8 COLLATE utf8_bin;`                      | Creates the Zabbix database.                              |                                             |
+| `CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'password';`                       | Creates a Zabbix MySQL user.                              |                                             |
+| `GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost';`                        | Gives the Zabbix user full access to the Zabbix database. |                                             |
+| `zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz                            | mysql -u zabbix -p zabbix`                                | Imports the initial Zabbix database schema. |
+| `sudo nano /etc/zabbix/zabbix_server.conf`                                         | Opens Zabbix configuration file (to set DBPassword).      |                                             |
+| `sudo systemctl start zabbix-server zabbix-agent httpd`                            | Starts Zabbix services and Apache web server.             |                                             |
+| `sudo systemctl enable zabbix-server zabbix-agent httpd`                           | Enables all Zabbix services at boot.                      |                                             |
+| Access via browser: `http://your-server/zabbix`                                    | Opens the Zabbix dashboard.                               |                                             |
+
