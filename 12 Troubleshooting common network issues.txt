@@ -1,0 +1,17 @@
+| **Command**                                        | **What it does**                                  |
+| -------------------------------------------------- | ------------------------------------------------- |
+| `nmcli`                                            | Shows status of network interfaces.               |
+| `ip a`                                             | Lists network interfaces and assigned IPs.        |
+| `ping -c 4 8.8.8.8`                                | Tests internet connectivity to Google DNS.        |
+| Inspect `/etc/resolv.conf`                         | Checks DNS settings.                              |
+| `sudo firewall-cmd --add-service=http --permanent` | Allows HTTP traffic through the firewall.         |
+| `sudo firewall-cmd --reload`                       | Reloads firewall rules.                           |
+| `sudo systemctl restart NetworkManager`            | Restarts networking services.                     |
+| `sudo systemctl restart network`                   | Restarts classic network service (if NM is off).  |
+| `setenforce 0`                                     | Temporarily disables SELinux (for testing).       |
+| `ip route`                                         | Shows routing table information.                  |
+| `ip link`                                          | Shows status of interfaces (up/down).             |
+| Check logs: `/var/log/messages`, `/var/log/dmesg`  | Views network-related logs.                       |
+| Edit `/etc/sysconfig/network-scripts/ifcfg-*`      | Fixes interface configuration.                    |
+| Reboot (`sudo reboot`)                             | Fixes issues caused by temporary system glitches. |
+
